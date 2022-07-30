@@ -46,8 +46,8 @@ function Advice(){
                     </q>
                 </h1>
                 
-                <div>
-                    <img src={patternDivider} alt="pattern divider" />
+                <div className="pattern">
+                    {/* <img src={patternDivider} alt="pattern divider" /> */}
                 </div>
                 <button className="generate--button" onClick={handleClick}>
                     <img className={loadingDice} src={dice} alt="Dice" />
