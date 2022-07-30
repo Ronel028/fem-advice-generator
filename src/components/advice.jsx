@@ -25,16 +25,16 @@ function Advice(){
         })
         setLoading(false)
     }
-    
-    useEffect(function(){
-        fetchingAdvice()
-    }, [])
 
     function handleClick(){
         fetchingAdvice()
     }
 
     let loadingDice = loading ? "spin-image" : ""
+
+    useEffect(function(){
+        fetchingAdvice()
+    }, [])
 
     return (
         <main className="advice--card">
