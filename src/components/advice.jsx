@@ -10,24 +10,20 @@ function Advice(){
         id: "",
         advice: ""
     })
+    const [loading, setLoading] = useState(false)
 
-    console.log("rendered")
-
-    function fetchingAdvice(){
-        fetch("https://api.adviceslip.com/advice")
-        .then(response => {
-            return response.json()
-        }).then(data =>{
-            const { id, advice } = data.slip
-            setAdvice(function(prev){
-                return {
-                    id: id,
-                    advice: advice
-                }
-            })
-        }).catch(error =>{
-            console.log(error)
+    async function fetchingAdvice(){
+        setLoading(true)
+        const adviceSlip = await fetch("https://api.adviceslip.com/advice")
+        const response = await adviceSlip.json();
+        const { id, advice } = response.slip
+        setAdvice(function(prev){
+            return {
+                id: id,
+                advice: advice
+            }
         })
+        setLoading(false)
     }
     
     useEffect(function(){
@@ -38,20 +34,25 @@ function Advice(){
         fetchingAdvice()
     }
 
+    let loadingDice = loading ? "spin-image" : ""
+
     return (
         <main className="advice--card">
-           <div className="advice--content">
+            <div className="advice--content">
                 <h4>ADVICE #{advice.id}</h4>
                 <h1>
                     <q>
                         {advice.advice}
                     </q>
                 </h1>
+                
                 <div>
                     <img src={patternDivider} alt="pattern divider" />
                 </div>
-                <button className="generate--button" onClick={handleClick}><img src={dice} alt="Dice" /></button>
-           </div>
+                <button className="generate--button" onClick={handleClick}>
+                    <img className={loadingDice} src={dice} alt="Dice" />
+                </button>
+            </div>
         </main>
     )
 }
