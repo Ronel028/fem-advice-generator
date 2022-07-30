@@ -1,0 +1,81 @@
+
+@import "./partials/variables";
+
+
+
+*, *::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: $font-manrope;
+}
+
+.main--container{
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    background-color: $Dark-Blue;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .advice--card{
+        height: auto;
+        width: toRem(539); 
+        background-color: $Dark-Grayish-Blue;
+        padding: toRem(48) toRem(52);
+        border-radius: toRem(14);
+
+        position: relative;
+
+       .advice--content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: toRem(34);
+
+            h4{
+                font-size: toRem(12);
+                font-weight: 800;
+                letter-spacing: toRem(4);
+                color: $Neon-Green;
+            }
+            h1{
+                font-size: toRem(28);
+                font-weight: 800;
+                color: $Light-Cyan;
+                text-align: center;
+            }
+            .generate--button{
+
+                width: toRem(64);
+                height: toRem(64);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: none;
+                background-color: $Neon-Green;
+                cursor: pointer;
+
+                position: absolute;
+                left: 50%;
+                bottom: toRem(-32);
+                transform: translateX(-50%);
+
+                transition: all 0.3s ease-in;
+
+                &:hover{
+                    box-shadow: toRem(0) toRem(-1) toRem(22) $Neon-Green;
+                }
+
+            }
+       }
+    }
+    
+}

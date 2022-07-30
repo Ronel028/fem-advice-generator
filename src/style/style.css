@@ -1,0 +1,65 @@
+*, *::after, *::before {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+}
+
+.main--container {
+  width: 100%;
+  height: auto;
+  min-height: 100vh;
+  background-color: hsl(218deg, 23%, 16%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main--container .advice--card {
+  height: auto;
+  width: 33.6875rem;
+  background-color: hsl(217deg, 19%, 24%);
+  padding: 3rem 3.25rem;
+  border-radius: 0.875rem;
+  position: relative;
+}
+.main--container .advice--card .advice--content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2.125rem;
+}
+.main--container .advice--card .advice--content h4 {
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.25rem;
+  color: hsl(150deg, 100%, 66%);
+}
+.main--container .advice--card .advice--content h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: hsl(193deg, 38%, 86%);
+  text-align: center;
+}
+.main--container .advice--card .advice--content .generate--button {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: hsl(150deg, 100%, 66%);
+  cursor: pointer;
+  position: absolute;
+  left: 50%;
+  bottom: -2rem;
+  transform: translateX(-50%);
+  transition: all 0.3s ease-in;
+}
+.main--container .advice--card .advice--content .generate--button:hover {
+  box-shadow: 0rem -0.0625rem 1.375rem hsl(150deg, 100%, 66%);
+}/*# sourceMappingURL=style.css.map */
